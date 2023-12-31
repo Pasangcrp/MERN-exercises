@@ -11,16 +11,16 @@ const App5 = () => {
   ];
 
   const [selected, setSelected] = useState(0);
-  const [points, setPoints] = useState(0, 0, 0, 0, 0, 0);
+  const [points, setPoints] = useState([0, 0, 0, 0, 0, 0]);
 
   const highest = Math.max(...points);
   const highestIndex = points.indexOf(highest);
 
   const nextQuote = () => {
-    if (selected === quotes.length + 1) {
+    if (selected === quotes.length - 1) {
       setSelected(0);
     } else {
-      selected(selected + 1);
+      setSelected(selected + 1);
     }
   };
 
@@ -32,15 +32,15 @@ const App5 = () => {
 
   return (
     <div>
-      <h1>Exercise 5</h1>
+      <h1>Exercise 5,6,7 & 8</h1>
       <h2>QUOTE OF THE DAY</h2>
       <p>{quotes[highestIndex]}</p>
       <button onClick={vote}>Vote</button>
-      <button onClick={{ nextQuote }}>Next quote</button>
+      <button onClick={nextQuote}>Next quote</button>
       <h1>QUOTES</h1>
       <p>{quotes[selected]}</p>
       <p>has {points[selected]} votes</p>
-      <button onClick={{ vote }}>Vote</button>
+      <button onClick={vote}>Vote</button>
       <button onClick={nextQuote}>Next Quote</button>
     </div>
   );
