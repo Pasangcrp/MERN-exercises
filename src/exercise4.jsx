@@ -1,22 +1,5 @@
 import { useState } from "react";
 
-const Statistics = ({ good, neutral, bad, total, percent }) => {
-  return (
-    <div>
-      <h3>Statistics</h3>
-      <h4>Good: {good}</h4>
-      <h4>Neutral: {neutral}</h4>
-      <h4>Bad: {bad}</h4>
-      <h4>Total: {total}</h4>
-
-      <h4>In percent :</h4>
-      <h3>Good: {percent.good.toFixed(2)}%</h3>
-      <h3>Neutral: {percent.neutral.toFixed(2)}%</h3>
-      <h3>Bad: {percent.bad.toFixed(2)}%</h3>
-    </div>
-  );
-};
-
 const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
@@ -52,20 +35,32 @@ const App = () => {
 
   return (
     <div>
-      <h1>Exercise 3</h1>
+      <h1>Exercise 4</h1>
       <h3>Give Feedback</h3>
       <button onClick={handleGood}>good</button>
       <button onClick={handleNeutral}>neutral</button>
       <button onClick={handleBad}>bad</button>
       <button onClick={handleTotal}>setTotal</button>
 
-      <Statistics
-        good={good}
-        neutral={neutral}
-        bad={bad}
-        total={total}
-        percent={percent}
-      />
+      <h3>Statistics</h3>
+
+      {total === 0 ? (
+        <p>
+          <i>FEEDBACK NOT GIVEN</i>
+        </p>
+      ) : (
+        <>
+          <h4>Good: {good}</h4>
+          <h4>Neutral: {neutral}</h4>
+          <h4>Bad: {bad}</h4>
+          <h4>Total: {total}</h4>
+
+          <h1>In percent :</h1>
+          <h3>Good: {percent.good.toFixed(2)}%</h3>
+          <h3>Neutral: {percent.neutral.toFixed(2)}%</h3>
+          <h3>Bad: {percent.bad.toFixed(2)}%</h3>
+        </>
+      )}
     </div>
   );
 };
