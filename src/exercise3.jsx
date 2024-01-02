@@ -17,7 +17,7 @@ const Statistics = ({ good, neutral, bad, total, percent }) => {
   );
 };
 
-const App3 = () => {
+const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
@@ -70,4 +70,4 @@ const App3 = () => {
   );
 };
 
-export default App3;
+export default App;
