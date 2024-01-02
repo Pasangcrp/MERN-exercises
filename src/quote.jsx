@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const App5 = () => {
+const App = () => {
   let quotes = [
     `The only way to do great work is to love what you do.`,
     "Be the change you wish to see in the world.",
@@ -46,4 +46,4 @@ const App5 = () => {
   );
 };
 
-export default App5;
+export default App;
